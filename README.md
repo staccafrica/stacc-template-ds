@@ -30,65 +30,97 @@ milestone to this repository; the commit history is the build log.
 Use the guided fixture and the independent variation in each module. Fix failures, then rerun every earlier test on the same candidate commit.
 The filenames below are the submission contract, not supplied solutions. Implement the tests and artifacts yourself; do not commit generated caches or personal data.
 
+Each list is exactly what Check my work looks for, including the section headings each file needs.
+
 ### ML Fundamentals
 
-- `framing.md`
+Task: https://app.getstacc.org/roadmap/ds-ml
+
+- `framing.md` with sections: User, Target, Prediction time, Cost of errors, Baseline
 - `src/train.py`
 - `tests/test_train.py`
 - `tests/test_split_isolation.py`
-- `docs/design.md`
+- `docs/design.md` with sections: Components, Data flow, Failure modes, Cost
+- GitHub Actions job `test` passes on the submitted commit
 
 ### How Models Learn
 
+Task: https://app.getstacc.org/roadmap/ds-models
+
 - `src/compare_models.py`
-- `reports/model_comparison.md`
+- `reports/model_comparison.md` with sections: Models, Cross-validation, How each decides, Choice
 - `tests/test_compare_models.py`
+- GitHub Actions job `test` passes on the submitted commit
 
 ### Feature Engineering
 
+Task: https://app.getstacc.org/roadmap/ds-features
+
 - `src/features.py`
-- `reports/feature_ablation.md`
+- `reports/feature_ablation.md` with sections: Leakage audit, Ablation results, Decision
 - `tests/test_features.py`
+- GitHub Actions job `test` passes on the submitted commit
 
 ### Unsupervised Learning
 
+Task: https://app.getstacc.org/roadmap/ds-unsupervised
+
 - `src/segments.py`
-- `reports/segments.md`
+- `reports/segments.md` with sections: PCA, Choosing k, Segment profiles, Model impact
 - `tests/test_segments.py`
+- GitHub Actions job `test` passes on the submitted commit
 
 ### Model Evaluation
 
-- `evaluation.md`
+Task: https://app.getstacc.org/roadmap/ds-evaluation
+
+- `evaluation.md` with sections: Baseline, Cross-validation, Threshold, Calibration, Error slices, Final test
 - `src/evaluate.py`
 - `tests/test_evaluation.py`
+- GitHub Actions job `test` passes on the submitted commit
 
 ### A/B Testing
 
-- `experiment_spec.md`
+Task: https://app.getstacc.org/roadmap/ds-experiments
+
+- `experiment_spec.md` with sections: Hypothesis, Randomisation unit, Primary metric, Guardrails, Sample size, Stopping rule, Decision rule
 - `tests/test_experiment_simulation.py`
+- GitHub Actions job `test` passes on the submitted commit
 
 ### Advanced Models
 
-- `model_selection.md`
+Task: https://app.getstacc.org/roadmap/ds-deeplearning
+
+- `model_selection.md` with sections: Baseline, Quality, Latency, Interpretability, Cost, Ship decision
 - `tests/test_model_comparison.py`
+- GitHub Actions job `test` passes on the submitted commit
 
 ### Model Deployment
 
+Task: https://app.getstacc.org/roadmap/ds-deployment
+
 - `app/main.py`
 - `tests/test_api.py`
-- `docs/api.md`
+- `docs/api.md` with sections: Endpoints, Validation, Latency
 - `Dockerfile`
-- `README.md`
+- `README.md` with sections: Live
+- GitHub Actions job `test` passes on the submitted commit
+- the link under the README Live section answers when checked (a health endpoint)
 
 ### Data Science Capstone
 
-- `README.md`
-- `MODEL_CARD.md`
-- `reports/final_test.md`
-- `reports/decision_memo.md`
+Task: https://app.getstacc.org/roadmap/ds-llm
+
+- `README.md` with sections: Decision, Reproduce, What broke, Walkthrough, Live
+- `MODEL_CARD.md` with sections: Intended use, Limitations, Evaluation
+- `reports/final_test.md` with sections: Protocol, Result, Limitations
+- `reports/decision_memo.md` with sections: Recommendation, Evidence, Risk, Next action
 - `tests/test_release_acceptance.py`
 - `reports/release_scenarios.md`
-- `docs/design.md`
+- `docs/design.md` with sections: What changed, At 10x
+- GitHub Actions job `test` passes on the submitted commit
+- README Walkthrough section links an HTTPS demonstration
+- the link under the README Live section answers when checked (a health endpoint)
 
 Keep the assessment job named `test` in GitHub Actions. It must run the actual acceptance tests; a green empty workflow does not establish correctness.
 For non-Python artifacts, add the appropriate validation/integration commands to CI and retain their outputs.
